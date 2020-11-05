@@ -1,48 +1,698 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - KaanYapi</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KaanYapi</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+﻿@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - KaanYapi</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KaanYapi</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2020 - KaanYapi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+    </body>
+    </html>*@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>M2 | House Repair Services</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel='stylesheet' id='rs-plugin-settings-css' href='~/js/vendor/rs-plugin/css/settings.css' type='text/css' media='all' />
+    <style id='rs-plugin-settings-inline-css' type='text/css'></style>
+    <link rel='stylesheet' id='fontello-css' href='~/css/fontello/css/fontello.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='animation-css' href='~/css/fontello/css/animation.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='~/css/__packed.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='main-style-css' href='~/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='shortcodes-css' href='~/css/shortcodes.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='theme-skin-css' href='~/css/default.css' type='text/css' media='all' />
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' id='responsive-css' href='~/css/responsive.css' type='text/css' media='all' />
+
+    <!--<link rel='stylesheet' href='custom_tools/css/custom_tools.css' type='text/css' media='all'/>-->
+    <!--[if lt IE 9]>
+        <script src="js/vendor/html5.js" type="text/javascript">
+    </script>
+    <![endif]-->
+</head>
+<body class="home page fullscreen top_panel_above sidemenu_left usermenu_show">
+
+    <div class="sidemenu_wrap swpLeftPos">
+        <div class="menuTranform">
+            <div class="sc_scroll sc_scroll_vertical swiper-slider-container scroll-container" id="sidemenu_scroll">
+                <div class="sc_scroll_wrapper swiper-wrapper">
+                    <div class="sc_scroll_slide swiper-slide">
+                        <div id="popup_menu" class="popup_wrapper">
+                            <nav role="navigation" class="sidemenu_area">
+                                <ul id="sidemenu" class="">
+                                    <li class="menu-item menu-item-has-children">
+                                        <a href="#">see our practice area:</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-has-children ">
+                                                <a href="#">Practice #1</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Maintenance</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Wiring</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Tiling</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Audio/Visual</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Electrical</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children ">
+                                                <a href="#">Practice #2</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Plumbing</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Air Sealing</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Fix-it School</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Remodelling Together</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children ">
+                                                <a href="#">Practice #3</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Financial Counseling</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Home Access Ramps</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Repair Team</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Project Design</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children ">
+                                                <a href="#">Practice #4</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Cabinet installation</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Ceramic, Glass &#038; Stone Tile</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Fixture Installation</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Attics</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children ">
+                                        <a href="#">find a handyman:</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-has-children ">
+                                                <a href="#">Handyman #1</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">CARLA CALOGERO</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">ERIN M. BLOWER</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">FRANKLIN W. SHOICHET</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">SHANE L. YELISH</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children ">
+                                                <a href="#">Handyman #2</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">JOHN R. VAUGHEY</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">MICHAEL C. MALNATI</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">NOAH . WILLIAMS</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">CHRISTINA L. CORWIN</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children ">
+                                                <a href="#">Handyman #3</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">JASON W. BURNETT</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">DOUGLAS W. AHRENS</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">LARISSA L. CHAN</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children ">
+                                                <a href="#">Handyman #4</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">JULIE R. SOMMER</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">MICHAEL J. LONGYEAR</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">FREDERIC D. REED</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="sidemenu_close">x</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sidemenu_scroll_bar" class="sc_scroll_bar sc_scroll_bar_vertical sidemenu_scroll_bar"> </div>
+            </div>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - KaanYapi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <!--[if lt IE 9]>
+        <div class="sc_infobox sc_infobox_style_error">
+    <div style="text-align:center;">It looks like you're using an old version of Internet Explorer. For the best WordPress experience, please <a href="http://microsoft.com" style="color:#191919">update your browser</a> or learn how to <a href="http://browsehappy.com" style="color:#222222">browse happy</a>!</div>
+    </div>	<![endif]-->
+
+    <div class="main_content">
+        <div class="boxedWrap">
+
+            <header class="noFixMenu menu_right with_user_menu">
+                <div class="topWrapFixed"> </div>
+                <div class="topWrap">
+                    <div class="usermenu_area">
+                        <div class="main">
+                            <div class="menuUsItem menuItemRight">
+                                <ul id="usermenu" class="usermenu_list">
+                                    <li class="usermenu_cart">
+                                        <a href="#" class="cart_button">
+                                            <span>Cart</span>
+                                            <b class="cart_total">
+                                                <span class="amount">£0.00</span>
+                                            </b>
+                                        </a>
+                                        <ul class="widget_area sidebar_cart sidebar">
+                                            <li>
+                                                <aside class="widgetWrap widget woocommerce widget_shopping_cart">
+                                                    <div class="hide_cart_widget_if_empty">
+                                                        <div class="widget_shopping_cart_content">
+                                                            <ul class="cart_list product_list_widget ">
+                                                                <li class="empty">No products in the cart.</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </aside>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="usermenu_login">
+                                        <a href="#user-popUp" class="user-popup-link">Login</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="sidemenu_button">
+                                <i class="icon-menu">
+                                </i>
+                            </div>
+                            <div class="menuUsItem menuItemLeft">Mon - Sat 8.00 - 18.00. Sunday CLOSED</div>
+                            <div class="menuUsItem menuItemLeft phone_number">Call us: 1.800.123.4567</div>
+                            <div class="copy_socials socPage">
+                                <span>STAY CONNECTED:</span>
+                                <ul>
+                                    <li>
+                                        <a class="social_icons icon-facebook" target="_blank" href="http://facebook.com"></a>
+                                    </li>
+                                    <li>
+                                        <a class="social_icons icon-tumblr" target="_blank" href="http://twitter.com"></a>
+                                    </li>
+                                    <li>
+                                        <a class="social_icons icon-pinterest" target="_blank" href="http://pinterest.com"></a>
+                                    </li>
+                                    <li>
+                                        <a class="social_icons icon-dribbble" target="_blank" href="http://dribbble.com"></a>
+                                    </li>
+                                    <li>
+                                        <a class="social_icons icon-rss" target="_blank" href="#"></a>
+                                    </li>
+                                    <li>
+                                        <a class="social_icons icon-gplus" target="_blank" href="http://gplus.com"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mainmenu_area">
+                        <div class="main">
+                            <div class="logo logo_left">
+                                <a href="index.html">
+                                    <img src="images/logo/68x62.png" class="logo_main" alt="">
+                                    <img src="images/logo/68x62.png" class="logo_fixed" alt="">
+                                    <span class="logo_slogan">House Repair</span>
+                                </a>
+                            </div>
+                            <div class="search" title="Open/close search form">
+                                <div class="searchForm">
+                                    <form role="search" method="get" class="search-form" action="index.html">
+                                        <button type="submit" class="searchSubmit" title="Start search">
+                                            <span class="icoSearch"></span>
+                                        </button>
+                                        <input type="text" class="searchField" placeholder="Search &hellip;" value="" name="s" title="Search for:" />
+                                    </form>
+                                </div>
+                                <div class="ajaxSearchResults"></div>
+                            </div>
+                            <div class="responsiveMenu">
+                                <a href="#" class="openResponsiveMenu">Main Menu</a>
+                            </div>
+                            <nav role="navigation" class="menuTopWrap topMenuStyleLine">
+                                <ul id="mainmenu" class="">
+                                    <li class="menu-item current-menu-item current-menu-ancestor current-menu-parent menu-item-has-children">
+                                        <a href="index.html">Home</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item current-menu-item page_item">
+                                                <a href="index.html">Home 1</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="index2.html">Home 2</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="index3.html">Home 3 &#8211; One Page</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                        <a title="Tools and Pages" href="#">
+                                            <span class="menu_icon icon-params"></span>Features
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item menu-item-has-children">
+                                                <a href="#">Pages</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_about_us.html">About Us</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_service.html">Service / Department Page</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_handyman.html">Handyman Personal Page</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_protected_page.html">Protected Page (hint: 123)</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_under_construction.html">Under Construction</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_faq.html">FAQ</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="features_pages_page_404.html">Page 404</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="features_shop.html">Shop</a>
+                                            </li>
+                                            <li class="menu-item menu-item-object-post">
+                                                <a href="features_shortcodes.html">Shortcodes</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="features_typography.html">Typography</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a target="_blank" href="doc/index.html">Docs</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children columns custom_view_item">
+                                        <a href="#">Services</a>
+                                        <ul class="menu-panel columns">
+                                            <li>
+                                                <ul class="custom-menu-style columns sub-menu">
+                                                    <li class="menu-item menu-item-has-children">
+                                                        <a href="#">Service #1</a>
+                                                        <ul class="sub-menu">
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Maintenance</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Wiring</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Tiling</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Audio/Visual</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Electrical</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="menu-item menu-item-has-children">
+                                                        <a href="#">Service #2</a>
+                                                        <ul class="sub-menu">
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Plumbing</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Air sealing</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Fix-it school</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Remodelling Together</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Financial Counseling</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="menu-item menu-item-has-children">
+                                                        <a href="#">Service #3</a>
+                                                        <ul class="sub-menu">
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Home access ramps</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Repair team</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Project Design</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Cabinet installation</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Ceramic, Glass &#038; Stone Tile</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="menu-item menu-item-has-children">
+                                                        <a href="#">Service #4</a>
+                                                        <ul class="sub-menu">
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Fixture Installation</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Drywall service</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Attics</a>
+                                                            </li>
+                                                            <li class="menu-item">
+                                                                <a href="features_pages_service.html">Carpentry</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                        <a href="#">Projects</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="projects_1_column.html">1 column</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="projects_2_columns.html">2 columns</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="projects_3_columns.html">3 columns</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="projects_4_columns.html">4 columns</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="pricing.html">Pricing</a>
+                                    </li>
+                                    <li class="menu-item menu-item-has-children">
+                                        <a href="#">Blog</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="blog_with_sidebar.html">With Sidebar</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="blog_without_sidebar.html">Without Sidebar</a>
+                                            </li>
+                                            <li class="menu-item menu-item-has-children">
+                                                <a href="#">Single Post</a>
+                                                <ul class="sub-menu">
+                                                    <li class="menu-item">
+                                                        <a href="single_post_with_sidebar.html">With Sidebar</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="single_post_without_sidebar.html">Without Sidebar</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="single_post_without_sidebar.html">Image Post</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="single_post_slider_post.html">Slider Post</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="single_post_video_post.html">Video Post</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="single_post_audio_post.html">Audio Post</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="contacts.html">Contacts</a>
+                                    </li>
+                                    <li class="highlight menu-item">
+                                        <a href="appointment.html">Appointment!</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            @RenderBody()
+
+            <div class="footerContentWrap">
+                <footer class="footerWrap footerStyleDark">
+                    <div class="main footerWidget widget_area">
+                        <div class="columnsWrap">
+                            <aside class="columns1_4 widgetWrap widget widget_text">
+                                <h3 class="title">About</h3>
+                                <div class="textwidget">
+                                    <figure class="sc_image  sc_image_shape_square">
+                                        <img src="images/logo/81x73.png" alt="" />
+                                    </figure>
+                                    <br /> 378 Main Street London England
+                                    <br /> info@example.net
+                                    <br /> +1 (44) 123-45-67
+                                </div>
+                            </aside>
+                            <aside class="columns1_4 widgetWrap widget widget_nav_menu">
+                                <h3 class="title">Services</h3>
+                                <div class="menu-services-container">
+                                    <ul id="menu-services" class="menu">
+                                        <li id="menu-item-3526" class="menu-item menu-item-3526">
+                                            <a href="features_pages_service.html">Carpentry</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_service.html">Electrical</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_service.html">Cabinet Repairs</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_service.html">Flat Panel TV Installations</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_service.html">Plumbing Repairs</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_service.html">Ceiling Fan Installation</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_service.html">Garage Door Repair</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_service.html">Painting</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_service.html">Drywall Repair</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_service.html">Termite Damage Repairs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+                            <aside class="columns1_4 widgetWrap widget widget_nav_menu">
+                                <h3 class="title">Pages</h3>
+                                <div class="menu-pages-container">
+                                    <ul id="menu-pages" class="menu">
+                                        <li class="menu-item">
+                                            <a href="index2.html">Home</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_handyman.html">About Us</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#">Portfolio</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="appointment.html">Make an Appointment</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_faq.html">FAQ</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="pricing.html">Pricing</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="features_pages_about_us.html">Team</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="contacts.html">Contacts</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+                            <aside class="columns1_4 widgetWrap widget widget_text">
+                                <h3 class="title">Best Theme</h3>
+                                <div class="textwidget">
+                                    <p>Our company does its work with the customer in mind. That is why our customers are getting only the best services and products to fulfill their most sophisticated demands.</p>
+                                    <div class="sc_button sc_button_style_global sc_button_size_medium squareButton global medium">
+                                        <a href="#" class="">Buy Now</a>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </footer>
+                <div class="copyWrap">
+                    <div class="copy main">
+                        <div class="copyright">
+                            <a href="#">Axiom</a>&copy; 2015 All Rights Reserved
+                            <a href="#">Terms of Use</a>
+                            and <a href="#">Privacy Policy</a>
+                        </div>
+                        <div class="copy_socials socPage">
+                            <ul>
+                                <li>
+                                    <a class="social_icons icon-facebook" target="_blank" href="http://facebook.com"> </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons icon-tumblr" target="_blank" href="http://twitter.com"> </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons icon-pinterest" target="_blank" href="http://pinterest.com"> </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons icon-dribbble" target="_blank" href="http://dribbble.com"> </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons icon-rss" target="_blank" href="#"> </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons icon-gplus" target="_blank" href="http://gplus.com"> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+    </div>
+
+    <div id="preloader" class="preloader">
+        <div class="preloader_image"></div>
+    </div>
+    <script type='text/javascript' src='~/js/vendor/jquery.js'></script>
+    <script type='text/javascript' src='~/js/vendor/jquery-migrate.min.js'></script>
+    <script type='text/javascript' src='~/js/vendor/rs-plugin/js/jquery.themepunch.tools.min.js'></script>
+    <script type='text/javascript' src='~/js/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js'></script>
+                                        
+    <script type='text/javascript' src='~/js/custom/_main.js'></script>
+    <script type='text/javascript' src='~/js/vendor/__packed.js'></script>
+    <script type='text/javascript' src='~/js/custom/shortcodes_init.min.js'></script>
+    <script type='text/javascript' src='~/js/custom/_utils.min.js'></script>
+    <script type='text/javascript' src='~/js/custom/_front.min.js'></script>
+
+    <!--<script type='text/javascript' src='custom_tools/js/_customizer.js'></script>-->
+
 </body>
 </html>
+
