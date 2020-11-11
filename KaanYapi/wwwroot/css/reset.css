@@ -1,0 +1,7 @@
+﻿.logo img {
+    max-width:none;
+}
+
+header.fixedTopMenu .topWrap .logo img{
+    max-width:none;
+}

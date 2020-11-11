@@ -4,14 +4,16 @@ using KaanYapi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KaanYapi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201111194727_ilk")]
+    partial class ilk
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,7 +48,7 @@ namespace KaanYapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("blogModels");
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.BlogPictureModel", b =>
@@ -71,7 +73,7 @@ namespace KaanYapi.Migrations
 
                     b.HasIndex("BlogId");
 
-                    b.ToTable("blogPictureModels");
+                    b.ToTable("BlogPictures");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.CategoryModel", b =>
@@ -96,7 +98,7 @@ namespace KaanYapi.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("categoryModels");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.DefaultPictureModel", b =>
@@ -116,7 +118,7 @@ namespace KaanYapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("defaultPictureModels");
+                    b.ToTable("DefaultPictures");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.JobModel", b =>
@@ -140,7 +142,7 @@ namespace KaanYapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("jobModels");
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.JobPictureModel", b =>
@@ -163,7 +165,7 @@ namespace KaanYapi.Migrations
 
                     b.HasIndex("JobId");
 
-                    b.ToTable("jobPictureModels");
+                    b.ToTable("JobPictures");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.PageDescriptionModel", b =>
@@ -183,7 +185,7 @@ namespace KaanYapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("pageDescriptionModels");
+                    b.ToTable("PageDescriptions");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.PictureModel", b =>
@@ -208,7 +210,7 @@ namespace KaanYapi.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("pictureModels");
+                    b.ToTable("Pictures");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.ProductModel", b =>
@@ -232,7 +234,7 @@ namespace KaanYapi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(19,4)");
 
                     b.Property<string>("ShortDescription")
                         .HasColumnType("nvarchar(max)");
@@ -243,7 +245,7 @@ namespace KaanYapi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("productModels");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.ProductPropertyModel", b =>
@@ -264,7 +266,7 @@ namespace KaanYapi.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("productPropertyModels");
+                    b.ToTable("ProductProperties");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.ReviewModel", b =>
@@ -304,7 +306,31 @@ namespace KaanYapi.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("reviewModels");
+                    b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("KaanYapi.Models.ServiceModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IconPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.SubCategoryModel", b =>
@@ -328,7 +354,7 @@ namespace KaanYapi.Migrations
 
                     b.HasIndex("CategoriesId");
 
-                    b.ToTable("subCategoryModels");
+                    b.ToTable("SubCategories");
                 });
 
             modelBuilder.Entity("KaanYapi.Models.BlogPictureModel", b =>

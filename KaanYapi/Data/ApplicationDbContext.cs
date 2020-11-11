@@ -13,18 +13,29 @@ namespace KaanYapi.Data
         {
 
         }
-        DbSet<BlogPictureModel> blogPictureModels{get; set;}
-        DbSet<BlogModel> blogModels{get; set;}
-        DbSet<CategoryModel> categoryModels{get; set;}
-        DbSet<DefaultPictureModel> defaultPictureModels{get; set;}
-        DbSet<JobModel> jobModels{get; set;}
-        DbSet<JobPictureModel> jobPictureModels{get; set;}
-        DbSet<PageDescriptionModel> pageDescriptionModels{get; set;}
-        DbSet<PictureModel> pictureModels{get; set;}
-        DbSet<ProductModel> productModels{get; set;}
-        DbSet<ProductPropertyModel> productPropertyModels{get; set;}
-        DbSet<ReviewModel> reviewModels{get; set;}
-        DbSet<SubCategoryModel> subCategoryModels{get; set;}
-        DbSet<AdminMapAddress> adminMapAddressesModels { get; set; }
+
+        public virtual DbSet<BlogPictureModel> BlogPictures{get; set;}
+        public virtual DbSet<BlogModel> Blogs{get; set;}
+        public virtual DbSet<CategoryModel> Categories{get; set;}
+        public virtual DbSet<DefaultPictureModel> DefaultPictures{get; set;}
+        public virtual DbSet<JobModel> Jobs{get; set;}
+        public virtual DbSet<JobPictureModel> JobPictures{get; set;}
+        public virtual DbSet<PageDescriptionModel> PageDescriptions{get; set;}
+        public virtual DbSet<PictureModel> Pictures{get; set;}
+        public virtual DbSet<ProductModel> Products{get; set;}
+        public virtual DbSet<ProductPropertyModel> ProductProperties{get; set;}
+        public virtual DbSet<ReviewModel> Reviews{get; set;}
+        public virtual DbSet<SubCategoryModel> SubCategories{get; set;}
+        public virtual DbSet<ServiceModel> Services { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductModel>(x =>
+            {
+                x.Property(f => f.Price).HasColumnType("decimal(19,4)");
+
+            });
+        }
+
     }
 }
