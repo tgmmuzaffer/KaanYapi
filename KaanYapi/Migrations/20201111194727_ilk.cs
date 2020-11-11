@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace KaanYapi.Migrations
 {
-    public partial class firstMg : Migration
+    public partial class ilk : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "blogModels",
+                name: "Blogs",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -21,11 +21,11 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_blogModels", x => x.Id);
+                    table.PrimaryKey("PK_Blogs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "defaultPictureModels",
+                name: "DefaultPictures",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -35,11 +35,11 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_defaultPictureModels", x => x.Id);
+                    table.PrimaryKey("PK_DefaultPictures", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "jobModels",
+                name: "Jobs",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -50,11 +50,11 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_jobModels", x => x.Id);
+                    table.PrimaryKey("PK_Jobs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "pageDescriptionModels",
+                name: "PageDescriptions",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -64,18 +64,18 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_pageDescriptionModels", x => x.Id);
+                    table.PrimaryKey("PK_PageDescriptions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "productModels",
+                name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     _Name = table.Column<string>(nullable: false),
                     Barcode = table.Column<string>(nullable: false),
-                    Price = table.Column<decimal>(nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(19,4)", nullable: false),
                     LongDescription = table.Column<string>(nullable: true),
                     ShortDescription = table.Column<string>(nullable: true),
                     IsNew = table.Column<bool>(nullable: false),
@@ -83,11 +83,26 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_productModels", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "blogPictureModels",
+                name: "Services",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IconPath = table.Column<string>(nullable: false),
+                    Title = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Services", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BlogPictures",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -98,17 +113,17 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_blogPictureModels", x => x.Id);
+                    table.PrimaryKey("PK_BlogPictures", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_blogPictureModels_blogModels_BlogId",
+                        name: "FK_BlogPictures_Blogs_BlogId",
                         column: x => x.BlogId,
-                        principalTable: "blogModels",
+                        principalTable: "Blogs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "jobPictureModels",
+                name: "JobPictures",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -119,17 +134,17 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_jobPictureModels", x => x.Id);
+                    table.PrimaryKey("PK_JobPictures", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_jobPictureModels_jobModels_JobId",
+                        name: "FK_JobPictures_Jobs_JobId",
                         column: x => x.JobId,
-                        principalTable: "jobModels",
+                        principalTable: "Jobs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "categoryModels",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -140,17 +155,17 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_categoryModels", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_categoryModels_productModels_ProductId",
+                        name: "FK_Categories_Products_ProductId",
                         column: x => x.ProductId,
-                        principalTable: "productModels",
+                        principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "pictureModels",
+                name: "Pictures",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -161,17 +176,17 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_pictureModels", x => x.Id);
+                    table.PrimaryKey("PK_Pictures", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_pictureModels_productModels_ProductId",
+                        name: "FK_Pictures_Products_ProductId",
                         column: x => x.ProductId,
-                        principalTable: "productModels",
+                        principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "productPropertyModels",
+                name: "ProductProperties",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -181,17 +196,17 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_productPropertyModels", x => x.Id);
+                    table.PrimaryKey("PK_ProductProperties", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_productPropertyModels_productModels_ProductId",
+                        name: "FK_ProductProperties_Products_ProductId",
                         column: x => x.ProductId,
-                        principalTable: "productModels",
+                        principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "reviewModels",
+                name: "Reviews",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -206,23 +221,23 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_reviewModels", x => x.Id);
+                    table.PrimaryKey("PK_Reviews", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_reviewModels_blogModels_BlogId",
+                        name: "FK_Reviews_Blogs_BlogId",
                         column: x => x.BlogId,
-                        principalTable: "blogModels",
+                        principalTable: "Blogs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_reviewModels_productModels_ProductId",
+                        name: "FK_Reviews_Products_ProductId",
                         column: x => x.ProductId,
-                        principalTable: "productModels",
+                        principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "subCategoryModels",
+                name: "SubCategories",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -233,93 +248,96 @@ namespace KaanYapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_subCategoryModels", x => x.Id);
+                    table.PrimaryKey("PK_SubCategories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_subCategoryModels_categoryModels_CategoriesId",
+                        name: "FK_SubCategories_Categories_CategoriesId",
                         column: x => x.CategoriesId,
-                        principalTable: "categoryModels",
+                        principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_blogPictureModels_BlogId",
-                table: "blogPictureModels",
+                name: "IX_BlogPictures_BlogId",
+                table: "BlogPictures",
                 column: "BlogId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_categoryModels_ProductId",
-                table: "categoryModels",
+                name: "IX_Categories_ProductId",
+                table: "Categories",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_jobPictureModels_JobId",
-                table: "jobPictureModels",
+                name: "IX_JobPictures_JobId",
+                table: "JobPictures",
                 column: "JobId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_pictureModels_ProductId",
-                table: "pictureModels",
+                name: "IX_Pictures_ProductId",
+                table: "Pictures",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_productPropertyModels_ProductId",
-                table: "productPropertyModels",
+                name: "IX_ProductProperties_ProductId",
+                table: "ProductProperties",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_reviewModels_BlogId",
-                table: "reviewModels",
+                name: "IX_Reviews_BlogId",
+                table: "Reviews",
                 column: "BlogId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_reviewModels_ProductId",
-                table: "reviewModels",
+                name: "IX_Reviews_ProductId",
+                table: "Reviews",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_subCategoryModels_CategoriesId",
-                table: "subCategoryModels",
+                name: "IX_SubCategories_CategoriesId",
+                table: "SubCategories",
                 column: "CategoriesId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "blogPictureModels");
+                name: "BlogPictures");
 
             migrationBuilder.DropTable(
-                name: "defaultPictureModels");
+                name: "DefaultPictures");
 
             migrationBuilder.DropTable(
-                name: "jobPictureModels");
+                name: "JobPictures");
 
             migrationBuilder.DropTable(
-                name: "pageDescriptionModels");
+                name: "PageDescriptions");
 
             migrationBuilder.DropTable(
-                name: "pictureModels");
+                name: "Pictures");
 
             migrationBuilder.DropTable(
-                name: "productPropertyModels");
+                name: "ProductProperties");
 
             migrationBuilder.DropTable(
-                name: "reviewModels");
+                name: "Reviews");
 
             migrationBuilder.DropTable(
-                name: "subCategoryModels");
+                name: "Services");
 
             migrationBuilder.DropTable(
-                name: "jobModels");
+                name: "SubCategories");
 
             migrationBuilder.DropTable(
-                name: "blogModels");
+                name: "Jobs");
 
             migrationBuilder.DropTable(
-                name: "categoryModels");
+                name: "Blogs");
 
             migrationBuilder.DropTable(
-                name: "productModels");
+                name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Products");
         }
     }
 }

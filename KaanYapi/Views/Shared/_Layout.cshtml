@@ -17,7 +17,9 @@
     <style id='theme-skin-inline-css' type='text/css'></style>
     <link rel='stylesheet' id='responsive-css' href='~/css/responsive.css' type='text/css' media='all' />
 
-    <link rel='stylesheet' href='custom_tools/css/custom_tools.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='custom_tools/css/custom_tools.css' type='text/css' media='all' />
+
+    <link href="~/css/reset.css" rel="stylesheet" />
 
     <script src="js/vendor/html5.js" type="text/javascript"></script>
 
@@ -200,7 +202,7 @@
                 <div class="topWrap">
                     <div class="usermenu_area">
                         <div class="main">
-                            <div class="menuUsItem menuItemRight">
+                            @*<div class="menuUsItem menuItemRight">
                                 <ul id="usermenu" class="usermenu_list">
                                     <li class="usermenu_cart">
                                         <a href="#" class="cart_button">
@@ -227,15 +229,15 @@
                                         <a href="#user-popUp" class="user-popup-link">Login</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div>*@
                             <div class="sidemenu_button">
                                 <i class="icon-menu">
                                 </i>
                             </div>
-                            <div class="menuUsItem menuItemLeft">Mon - Sat 8.00 - 18.00. Sunday CLOSED</div>
+                            <div class="menuUsItem menuItemLeft">Pzt - Cmt 08.00 - 18.00. Pazar Kapalı</div>
                             <div class="menuUsItem menuItemLeft phone_number">Bizi Arayın: +90 (312) 312 20 04</div>
                             <div class="copy_socials socPage">
-                                <span>STAY CONNECTED:</span>
+                                <span>Bizi Takip Edin:</span>
                                 <ul>
                                     <li>
                                         <a class="social_icons icon-facebook" target="_blank" href="http://facebook.com"></a>
@@ -285,7 +287,7 @@
                             <nav role="navigation" class="menuTopWrap topMenuStyleLine">
                                 <ul id="mainmenu" class="">
                                     <li class="menu-item current-menu-item current-menu-ancestor current-menu-parent menu-item-has-children">
-                                        <a href="index.html">Home</a>
+                                        <a href="index.html">Anasayfa</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item current-menu-item page_item">
                                                 <a href="index.html">Home 1</a>
@@ -300,7 +302,7 @@
                                     </li>
                                     <li class="menu-item menu-item-has-children">
                                         <a title="Tools and Pages" href="#">
-                                            <span class="menu_icon icon-params"></span>Features
+                                            <span class="menu_icon icon-params"></span>Hakkımızda
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="menu-item menu-item-has-children">
@@ -344,7 +346,7 @@
                                         </ul>
                                     </li>
                                     <li class="menu-item menu-item-has-children columns custom_view_item">
-                                        <a href="#">Hizmetlerimiz</a>
+                                        <a href="#">HİZMETLERİMİZ</a>
                                         <ul class="menu-panel columns">
                                             <li>
                                                 <ul class="custom-menu-style columns sub-menu">
@@ -430,7 +432,7 @@
                                         </ul>
                                     </li>
                                     <li class="menu-item menu-item-has-children">
-                                        <a href="#">Projects</a>
+                                        <a href="#">ÜRÜNLERİMİZ</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item">
                                                 <a href="projects_1_column.html">1 column</a>
@@ -447,7 +449,7 @@
                                         </ul>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="pricing.html">Pricing</a>
+                                        <a href="pricing.html">Referanslarımız</a>
                                     </li>
                                     <li class="menu-item menu-item-has-children">
                                         <a href="#">Blog</a>
@@ -484,11 +486,11 @@
                                         </ul>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="contacts.html">Contacts</a>
+                                        <a href="contacts.html">İLETİŞİM</a>
                                     </li>
-                                    <li class="highlight menu-item">
+                                    @*<li class="highlight menu-item">
                                         <a href="appointment.html">Appointment!</a>
-                                    </li>
+                                    </li>*@
                                 </ul>
                             </nav>
                         </div>
@@ -506,7 +508,7 @@
                                 <h3 class="title">Hakkımızda</h3>
                                 <div class="textwidget">
                                     <figure class="sc_image  sc_image_shape_square">
-                                        <img src="images/logo/81x73.png" alt="" />
+                                        <img src="images/logo/68x62.png" alt="" />
                                     </figure>
                                     <br /> Rüzgarlı sokak Çapar iş hanı No:16/32 Altındağ/ANKARA
                                     <br /> kaanyapi19@gmail.com
@@ -514,7 +516,7 @@
                                 </div>
                             </aside>
                             <aside class="columns1_4 widgetWrap widget widget_nav_menu">
-                                <h3 class="title">Services</h3>
+                                <h3 class="title">HİZMETLERİMİZ</h3>
                                 <div class="menu-services-container">
                                     <ul id="menu-services" class="menu">
                                         <li id="menu-item-3526" class="menu-item menu-item-3526">
@@ -551,32 +553,29 @@
                                 </div>
                             </aside>
                             <aside class="columns1_4 widgetWrap widget widget_nav_menu">
-                                <h3 class="title">Pages</h3>
+                                <h3 class="title">Sayfalar</h3>
                                 <div class="menu-pages-container">
                                     <ul id="menu-pages" class="menu">
                                         <li class="menu-item">
-                                            <a href="index2.html">Anasayfa</a>
+                                            <a href="index2.html">ANASAYFA</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="features_pages_handyman.html">About Us</a>
+                                            <a href="features_pages_handyman.html">HAKKIMIZDA</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="#">Portfolio</a>
+                                            <a href="#">HİZMETLERİMİZ</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="appointment.html">Make an Appointment</a>
+                                            <a href="appointment.html">ÜRÜNLERİMİZ</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="features_pages_faq.html">FAQ</a>
+                                            <a href="features_pages_faq.html">REFERANSLARIMIZ</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="pricing.html">Pricing</a>
+                                            <a href="pricing.html">BLOG</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="features_pages_about_us.html">Team</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="contacts.html">Contacts</a>
+                                            <a href="features_pages_about_us.html">İLETİŞİM</a>
                                         </li>
                                     </ul>
                                 </div>
