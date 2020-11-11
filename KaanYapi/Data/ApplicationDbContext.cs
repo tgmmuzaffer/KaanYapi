@@ -25,5 +25,6 @@ namespace KaanYapi.Data
         DbSet<ProductPropertyModel> productPropertyModels{get; set;}
         DbSet<ReviewModel> reviewModels{get; set;}
         DbSet<SubCategoryModel> subCategoryModels{get; set;}
+        DbSet<AdminMapAddress> adminMapAddressesModels { get; set; }
     }
 }
